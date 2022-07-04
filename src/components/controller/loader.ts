@@ -1,5 +1,9 @@
+
 class Loader {
-    constructor(baseLink, options) {
+    baseLink: string;
+    options: { apiKey: string; };
+  
+    constructor(baseLink: string, options: {apiKey:string}) {
         this.baseLink = baseLink;
         this.options = options;
     }

@@ -1,5 +1,5 @@
 {
-    "plugins": ["prettier", "import"],
+    "plugins": ["prettier", "import","@typescript-eslint"],
     "extends": [
         "plugin:prettier/recommended",
         "prettier"
@@ -14,8 +14,18 @@
         "node": true
     },
     "rules": {
+        "@typescript-eslint/rule-name": "error",
         "no-debugger": "off",
         "no-console": 0,
         "class-methods-use-this": "off"
-    }
+    },
+    "parser": "@typescript-eslint/parser",
+    "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+   
+ 
 }

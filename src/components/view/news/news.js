@@ -3,11 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("./news.css");
 class News {
     draw(data) {
+        var _a;
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp');
         news.forEach((item, idx) => {
-            const newsClone = newsItemTemp.content.cloneNode(true);
+            const newsClone = newsItemTemp === null || newsItemTemp === void 0 ? void 0 : newsItemTemp.content.cloneNode(true);
             if (idx % 2)
                 newsClone.querySelector('.news__item').classList.add('alt');
             newsClone.querySelector('.news__meta-photo').style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
@@ -24,7 +25,7 @@ class News {
             fragment.append(newsClone);
         });
         document.querySelector('.news').innerHTML = '';
-        document.querySelector('.news').appendChild(fragment);
+        (_a = document.querySelector('.news')) === null || _a === void 0 ? void 0 : _a.appendChild(fragment);
     }
 }
 exports.default = News;

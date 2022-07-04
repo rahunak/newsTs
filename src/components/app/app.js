@@ -11,9 +11,9 @@ class App {
         this.view = new appView_1.AppView();
     }
     start() {
-        document
-            .querySelector('.sources')
-            .addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
+        var _a;
+        (_a = document
+            .querySelector('.sources')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data)));
         this.controller.getSources((data) => this.view.drawSources(data));
     }
 }

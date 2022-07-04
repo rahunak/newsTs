@@ -1,14 +1,14 @@
 import './news.css';
 
 class News {
-    draw(data) {
+    draw(data: any[]) {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp');
 
         news.forEach((item, idx) => {
-            const newsClone = newsItemTemp.content.cloneNode(true);
+            const newsClone = newsItemTemp?.content.cloneNode(true);
 
             if (idx % 2) newsClone.querySelector('.news__item').classList.add('alt');
 
@@ -31,7 +31,7 @@ class News {
         });
 
         document.querySelector('.news').innerHTML = '';
-        document.querySelector('.news').appendChild(fragment);
+        document.querySelector('.news')?.appendChild(fragment);
     }
 }
 
